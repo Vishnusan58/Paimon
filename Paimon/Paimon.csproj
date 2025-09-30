@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
@@ -10,12 +10,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.SemanticKernel" Version="1.65.0" />
+        <PackageReference Include="Microsoft.SemanticKernel.Connectors.Google" Version="1.65.0-alpha" />
         <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+        <PackageReference Include="System.Speech" Version="8.0.0" />
     </ItemGroup>
 
     <!-- Copy local secrets.json if it exists (kept out of VCS) -->
     <ItemGroup Condition="Exists('secrets.json')">
         <None Include="secrets.json" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Image\" />
     </ItemGroup>
 
 </Project>
