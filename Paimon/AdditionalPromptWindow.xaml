@@ -1,0 +1,41 @@
+﻿<Window x:Class="Paimon.AdditionalPromptWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Extra Instructions" Width="420" Height="260"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ShowInTaskbar="False" Topmost="True">
+    <Border CornerRadius="16" BorderThickness="1" BorderBrush="#50FFFFFF" Padding="16" Background="#DD1a1a2e"
+            MouseLeftButtonDown="DragMoveWindow">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Margin="0,0,0,8">
+                <TextBlock Text="Traveler, add any extra instructions for Paimon:" 
+                           Foreground="White" FontSize="14" FontWeight="SemiBold"/>
+                <Button Content="×" Width="30" Height="30" HorizontalAlignment="Right" Click="CancelClick"
+                        Background="#30FFFFFF" BorderBrush="#60FFFFFF" BorderThickness="1" Foreground="White"/>
+            </Grid>
+
+            <Border Grid.Row="1" CornerRadius="10" Background="#25FFFFFF" BorderBrush="#40FFFFFF" BorderThickness="1" Padding="6">
+                <TextBox x:Name="ExtraBox" AcceptsReturn="True" TextWrapping="Wrap" Foreground="White" Background="Transparent"
+                         VerticalScrollBarVisibility="Auto" BorderThickness="0" FontSize="14"/>
+            </Border>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+                <Button Content="Cancel" Width="90" Margin="0,0,8,0" Click="CancelClick"
+                        Background="#20FFFFFF" Foreground="White" BorderBrush="#40FFFFFF"/>
+                <Button Content="Send" Width="110" Click="OkClick"
+                        Background="#40FFFFFF" Foreground="White" BorderBrush="#60FFFFFF"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
+
