@@ -1,0 +1,23 @@
+﻿# Build artifacts
+bin/
+obj/
+
+# Rider / IDE
+.idea/
+*.user
+*.userprefs
+*.suo
+*.csproj.user
+
+# Logs & dumps
+*.log
+*.dmp
+
+# Local secrets (DO NOT COMMIT)
+Paimon/secrets.json
+secrets.json
+
+# Other
+Thumbs.db
+Desktop.ini
+
